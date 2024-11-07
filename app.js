@@ -13,13 +13,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
-
-app.use((req, res, next) => {
-  res.setHeader(
-      "Content-Security-Policy",
-      "default-src 'self'; script-src 'self' https://vercel.live 'unsafe-inline'"
-  );
-  next();
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
 });
 
 
