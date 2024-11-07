@@ -15,9 +15,13 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://vercel.live");
+  res.setHeader(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' https://vercel.live 'unsafe-inline'"
+  );
   next();
 });
+
 
 // Middleware for parsing form data
 app.use(bodyParser.urlencoded({ extended: true }));
