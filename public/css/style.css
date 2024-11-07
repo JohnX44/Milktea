@@ -1,0 +1,453 @@
+:root {
+    /* Colors */
+    --primary-color: #ff69b4;
+    --primary-hover: #ff85c2;
+    --secondary-color: #ffccf9;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+
+    /* Spacing */
+    --padding-small: 10px;
+    --padding-medium: 15px;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Fonts */
+    --font-family: 'Poppins', sans-serif;
+    --font-size-small: 0.9rem;
+    --font-size-medium: 1.1rem;
+    --font-size-large: 1.5rem;
+}
+
+/* General Styling */
+body {
+    font-family: var(--font-family);
+   
+}
+
+/* Navbar Styling */
+.custom-navbar {
+    background-color: var(--secondary-color);
+    padding: var(--padding-medium);
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-size: var(--font-size-large);
+    color: var(--text-color);
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+    font-size: var(--font-size-medium);
+    text-transform: uppercase;
+    margin: 0 var(--padding-small);
+}
+
+.nav-link:hover {
+    color: var(--primary-hover) !important;
+}
+
+.navbar-right .btn-light {
+    color: var(--text-color);
+    border: 1px solid #ddd;
+}
+
+.btn-pink {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Promo Box Styling */
+.promo-box {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.promo-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* Milk Tea Product Styling */
+.milk-tea-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: var(--padding-medium);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    margin: auto;
+    max-width: 150px;
+}
+
+.milk-tea-card:hover {
+    transform: scale(1.05);
+}
+
+.milk-tea-img {
+    border-radius: var(--border-radius);
+    width: 100px;
+    height: 100px;
+    margin-bottom: var(--padding-small);
+}
+
+.milk-tea-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--font-size-small);
+    margin: var(--padding-small) 0;
+}
+
+.milk-tea-price {
+    color: var(--text-color);
+    font-size: var(--font-size-small);
+}
+
+.milk-tea-card .btn {
+    margin-top: var(--padding-small);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.milk-tea-card .btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Flying Cart Icon */
+.flying-cart-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    transition: all 3.5s ease;
+    position: absolute;
+    z-index: 1000;
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* Quantity Control Styling */
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Cart Modal Styling */
+#cartItemsList {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-small) 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.cart-item-quantity {
+    margin-right: 15px;
+    color: #6c757d;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.modal-footer h5 {
+    font-weight: bold;
+}
+
+
+/* General Container and Row */
+/* Main Section Styling */
+.milktea-shop-intro-section {
+    position: relative;
+    background-image: url('/imgs/simple.svg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    padding: 20px 10px; /* Reduced padding */
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.milktea-shop-intro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Light overlay to soften background */
+    z-index: 1;
+}
+
+/* Content Styling */
+.milktea-shop-intro-section .row {
+    position: relative;
+    z-index: 2;
+}
+
+.milktea-shop-image-wrapper {
+    border: 3px solid #ff69b4; /* Pink border */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px; /* Limit image width */
+    margin: auto;
+}
+
+.milktea-shop-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shop-content-section {
+    padding: 0 15px;
+    color: #333;
+}
+
+.category-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ff85c2;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 8px;
+    background-color: rgba(255, 105, 180, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.shop-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.shop-description,
+.shop-invitation {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.shop-invitation {
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .milktea-shop-intro-section {
+        padding: 15px 5px;
+    }
+
+    .shop-title {
+        font-size: 1.2rem;
+    }
+
+    .shop-description,
+    .shop-invitation {
+        font-size: 0.9rem;
+    }
+}
+
+/* Checkout Section */
+.container {
+    max-width: 800px;
+}
+
+h2, h4 {
+    color: #ff69b4; /* Pink color for headings */
+}
+
+.cart-summary {
+    border: 1px solid #ff69b4;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-total h5 {
+    color: #ff69b4;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Form Styling */
+.checkout-form label {
+    color: #555;
+}
+
+.checkout-form .form-control {
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+.checkout-form .btn-pink {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-form .btn-pink:hover {
+    background-color: #ff85c2;
+}
+
+.text-muted {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* CSS for green Add to Cart button when an item is added */
+.added-to-cart {
+    background-color: #28a745 !important; /* Green color */
+    color: white !important; /* White text color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+/* CSS for green Add to Cart button */
+.added-to-cart {
+    background-color: #28a745 !important; /* Green color */
+    color: white !important; /* White text color */
+    position: relative; /* Positioning to hold overlay message */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Overlay message styling */
+.overlay-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px;
+    border-radius: 4px;
+    opacity: 0;
+    animation: fadeInOut 1s forwards;
+}
+
+/* Fade-in and fade-out animation for overlay message */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    30% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+/* Fade-in animation */
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward motion */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initially hide the element */
+.fade-in-element {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Add fade-in effect when in view */
+.fade-in-element.in-view {
+    animation: fadeIn 0.8s ease forwards;
+}
+/* Style for Best Seller Badge */
+.badge-best-seller {
+    top: 10px;
+    left: 10px;
+    background-color: #e2187d; /* Pink color for the badge */
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 10;
+}
+/* Section Heading Styling */
+.section-heading {
+    font-size: 2em;
+    color: #ff69b4; /* Use your pink color */
+    font-weight: bold;
+}
+
+.text-muted {
+    color: #6c757d; /* Light gray color for subtitle */
+}

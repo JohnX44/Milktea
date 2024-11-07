@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2>Your Cart</h2>
+    <% if (cart.length === 0) { %>
+        <p>Your cart is empty.</p>
+    <% } else { %>
+        <ul class="list-group">
+            <% cart.forEach((item, index) => { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= item.productName %> - Qty: <%= item.quantity %>
+                    <span class="badge badge-primary badge-pill">$<%= (item.price * item.quantity).toFixed(2) %></span>
+                    <!-- Delete Item Button -->
+                    <form action="/remove-from-cart" method="POST" style="display:inline;">
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    <a href="/" class="btn btn-secondary mt-3">Continue Shopping</a>
+</div>

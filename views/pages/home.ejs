@@ -1,0 +1,64 @@
+<div class="container-fluid ">
+    <div class="container-fluid my-4 milktea-shop-intro-section">
+        <div class="row align-items-center">
+            <!-- Image Section (Smaller Shop Image) -->
+            <div class="col-12 col-md-5 text-center text-md-left mb-3 mb-md-0">
+                <div class="milktea-shop-image-wrapper">
+                    <img src="/imgs/mainpic.svg" alt="Our Milk Tea Shop" class="milktea-shop-image">
+                </div>
+            </div>
+    
+            <!-- Text Content Section (Shop Introduction) -->
+            <div class="col-12 col-md-7">
+                <div class="shop-content-section">
+                    <span class="category-label">Welcome to MilkTeaShop</span>
+                    <h2 class="shop-title">Crafting Moments, One Sip at a Time</h2>
+                    <p class="shop-description">
+                        Discover the finest milk teas crafted with love and quality ingredients. From classics to unique flavors, there's something for every taste.
+                    </p>
+                    <p class="shop-invitation">
+                        Visit us or order online to enjoy your perfect cup. <strong>Welcome to the family!</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Products Section Heading -->
+<div class="text-center my-5">
+    <h2 class="section-heading">Our Products</h2>
+    <p class="text-muted">Explore our delicious selection of milk teas and find your new favorite!</p>
+</div>
+
+<!-- Milk Tea Products Section -->
+<div class="row text-center justify-content-center my-5">
+    <!-- Milk Tea Product 1 to 10 -->
+    <% for (let i = 1; i <= 10; i++) { %>
+        <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="milk-tea-card p-3 position-relative">
+                <!-- Best Seller Badge -->
+                <% if (i === 1) { %>
+                    <span class="badge badge-best-seller position-absolute">Best Seller</span>
+                <% } %>
+                
+                <img src="/imgs/milk1.svg" alt="Milk Tea <%= i %>" class="milk-tea-img product-image">
+                <h5 class="milk-tea-title mt-2">Milk Tea <%= i %></h5>
+                <p class="milk-tea-price">$<%= (4.49 + i * 0.5).toFixed(2) %></p>
+                <div class="quantity-control d-flex justify-content-center align-items-center mb-2">
+                    <button class="btn btn-sm btn-outline-secondary quantity-btn decrease-qty">-</button>
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input mx-2" readonly>
+                    <button class="btn btn-sm btn-outline-secondary quantity-btn increase-qty">+</button>
+                </div>
+                <form action="/add-to-cart" method="POST" class="add-to-cart-form">
+                    <input type="hidden" name="productName" value="Milk Tea <%= i %>">
+                    <input type="hidden" name="price" value="<%= (4.49 + i * 0.5).toFixed(2) %>">
+                    <input type="hidden" name="quantity" class="hidden-quantity" value="1">
+                    <button type="submit" class="btn btn-pink btn-sm">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+</div>
