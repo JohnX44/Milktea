@@ -13,7 +13,19 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
+const helmet = require('helmet');
 
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "https://vercel.live"],
+        // Add other directives as needed
+      },
+    },
+  })
+);
 // Middleware for parsing form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
