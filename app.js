@@ -14,6 +14,10 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://vercel.live");
+  next();
+});
 
 // Middleware for parsing form data
 app.use(bodyParser.urlencoded({ extended: true }));
